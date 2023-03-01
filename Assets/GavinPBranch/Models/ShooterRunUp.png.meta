@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 71a20fa9685ac3f44911c994c8a7832b
+guid: eaf87d05f2a3fca49acbda1f327fc757
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,7 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ShooterRun_0
+      name: ShooterRunUp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -142,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40ec3ca069b0372439020cc16275480b
-      internalID: -792714445
+      spriteID: ca91404f6225a3b448407a3b1fbed990
+      internalID: -1221204049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShooterRun_1
+      name: ShooterRunUp_1
       rect:
         serializedVersion: 2
         x: 320
@@ -163,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f785c6daf5829044cb6aa4332fa4f558
-      internalID: 735953650
+      spriteID: 5991004d964919a449f6ff5f7773793e
+      internalID: 1702626667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShooterRun_2
+      name: ShooterRunUp_2
       rect:
         serializedVersion: 2
         x: 0
@@ -184,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a0579c8dba72ad48b40cca0239d4946
-      internalID: 917129594
+      spriteID: 59d5b35a311695846b0dd7df2eebcf7c
+      internalID: -1284918178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShooterRun_3
+      name: ShooterRunUp_3
       rect:
         serializedVersion: 2
         x: 320
@@ -205,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e945f5cf374c3447bad65b7bf9d671b
-      internalID: -439758139
+      spriteID: a8b2feba3c170154799232c41733e10e
+      internalID: -116722845
       vertices: []
       indices: 
       edges: []
@@ -222,10 +222,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ShooterRun_2: 917129594
-      ShooterRun_0: -792714445
-      ShooterRun_3: -439758139
-      ShooterRun_1: 735953650
+      ShooterRunUp_1: 1702626667
+      ShooterRunUp_2: -1284918178
+      ShooterRunUp_3: -116722845
+      ShooterRunUp_0: -1221204049
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

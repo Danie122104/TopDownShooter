@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // components
     Rigidbody2D rb;
+    Animator playerAnim;
 
     //Player
     float walkSpeed = 4f;
@@ -16,7 +17,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();     
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        playerAnim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
