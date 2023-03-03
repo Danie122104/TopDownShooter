@@ -7,26 +7,35 @@ public class PlayerController : MonoBehaviour
     // components
     Rigidbody2D rb;
     Animator playerAnim;
+    SpriteRenderer Sr;
 
     //Player
     float walkSpeed = 4f;
     float speedLimiter = 0.7f;
     float inputVertical;
     float inputHorizontal;
+    private int maxHealth = 3;
 
     //gun
     public GameObject shootFrom;
     public GameObject bullet;
 
-    //points
+    //Ui
     public TextMeshProUGUI pointText;
     public int points;
+    public GameObject gameOverScreen;
+
+    //weapon switch
+    public bool canShoot = true;
+    public int currentWeapon = 0;
+    public GameObject[] weapons;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         playerAnim = gameObject.GetComponent<Animator>();
+        Sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -38,8 +47,18 @@ public class PlayerController : MonoBehaviour
         faceMouse();
         if(Input.GetKeyDown(KeyCode.Mouse0))
             {
-            Instantiate(bullet, shootFrom.transform.position, shootFrom.transform.rotation);
+                if(canShoot)
+                    {
+                    Instantiate(bullet, shootFrom.transform.position, shootFrom.transform.rotation);
+                    }
+            }
+
+        //switch weapons
+        if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            SwithWeapons();
         }
+
     }
     private void FixedUpdate()
     {
@@ -75,5 +94,41 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             pointText.text = "Points: " + points;
         }
+        if(collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Slime"))
+        {
+            maxHealth--;
+            if(maxHealth <= 0)
+            {
+                //gameOver
+                gameOverScreen.SetActive(true);
+            }
+        }
+    }
+
+    public void SwithWeapons()
+    {
+        currentWeapon++;
+        if(currentWeapon >= weapons.Length)
+        {
+            currentWeapon = 0;
+        }
+
+        //gun
+        if(currentWeapon == 0)
+        {
+            weapons[1].SetActive(false);
+
+            weapons[0].SetActive(true);
+            canShoot = true;
+        }
+        //sword
+        if(currentWeapon == 1)
+        {
+            weapons[0].SetActive(false);
+
+            weapons[1].SetActive(true);
+            canShoot = false;
+        }
+
     }
 }
