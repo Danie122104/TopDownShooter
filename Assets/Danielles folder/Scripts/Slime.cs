@@ -13,6 +13,8 @@ public class Slime : MonoBehaviour
     Transform target;
     Vector2 moveDirection;
 
+    public GameObject babySlime;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -60,6 +62,15 @@ public class Slime : MonoBehaviour
 
     public void MakeBabySlimes()
     {
-        //FIX THIS
+        Instantiate(babySlime, transform.position, transform.rotation);
+        Instantiate(babySlime, transform.position, transform.rotation);
+        Instantiate(babySlime, transform.position, transform.rotation);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            TakeDamage(1);
+        }
     }
 }
