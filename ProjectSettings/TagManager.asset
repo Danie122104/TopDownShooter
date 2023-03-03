@@ -5,8 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+
   - Bullet
   - Coin
+  - Slime
+
   layers:
   - Default
   - TransparentFX

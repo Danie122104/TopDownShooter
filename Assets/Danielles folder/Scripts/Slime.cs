@@ -3,22 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Slime : MonoBehaviour
 {
-    public static event Action<Enemy> OnEnemyKilled;
-    [SerializeField] float health, maxHealth =  3f;
+    public static event Action<Slime> OnEnemyKilled;
+    [SerializeField] float health, maxHealth = 3f;
 
     [SerializeField] float moveSpeed = 5f;
     Rigidbody2D rb;
     Transform target;
     Vector2 moveDirection;
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
 
     // Start is called before the first frame update
     private void Start()
@@ -37,7 +35,6 @@ public class Enemy : MonoBehaviour
             moveDirection = direction;
         }
     }
-
     private void FixedUpdate()
     {
         if (target)
@@ -45,7 +42,6 @@ public class Enemy : MonoBehaviour
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
         }
     }
-
     public void TakeDamage(float damageAmount)
     {
         Debug.Log($"Damage Amount: {damageAmount}");
@@ -54,8 +50,16 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+
+            MakeBabySlimes();
+
             Destroy(gameObject);
             OnEnemyKilled?.Invoke(this);
         }
+    }
+
+    public void MakeBabySlimes()
+    {
+        //FIX THIS
     }
 }
